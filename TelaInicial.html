@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FoodBox</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+    <link
+    href="https://fonts.googleapis.com/css2?family=Righteous&family=Roboto:wght@400;700&display=swap"
+    rel="stylesheet"
+    />
+    <STyle>
+         body {
+        background: #e5e5e5;
+        font-family: "Roboto";
+      }
+        .titulo { 
+            background: red;
+            color: white;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px 0 #bbbbbb;
+        }
+        h1{
+            margin: 0;
+            font-family: "Righteous";
+            font-weight: normal;
+        }
+        h2{
+            margin: 0;
+            font-size: 18px;
+            font-weight: normal;
+        }
+        h3{
+            font-size: 30px;
+            margin-bottom: 5px;
+            font-family: "Righteous";
+            font-weight: normal;
+        }
+        h4{
+            margin-top: 0;
+            margin-bottom: 5px;
+            font-size: 20px;
+        }
+        img{
+            width: 130px;
+            border-radius: 5px;
+            float: right;
+            margin-left: 15px;
+        }
+        .produto{
+
+            background: white;
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 10px;
+            box-shadow: 0 0 10px 0 #bbbbbb;
+            cursor: pointer;
+            border: 5px solid white;
+        }
+        p{
+            margin: 15px 0 0 0;
+        }
+        .preco {
+            font-weight: bold;
+            font-size: 18px;
+        }
+        .botao {
+        background: #0b940b;
+        text-align: center;
+        padding: 15px;
+        margin-top: 30px;
+        margin-bottom: 100px;
+        border-radius: 50px;
+        color: white;
+        font-weight: bold;
+        font-size: 18px;
+        cursor: pointer;
+      }
+    </STyle>
+    <script>
+        let prato;
+        let bebida;
+        let sobremesa;
+        function escolherFrango(){
+                document.getElementById("carne").style.borderColor="white"
+                document.getElementById("frango").style.borderColor="green"
+                prato = 'frango'
+        }
+        function escolherCarne(){
+                document.getElementById("frango").style.borderColor="white"
+                document.getElementById("carne").style.borderColor="green"
+                prato = 'carne'
+        }
+        function escolherCoca(){
+                document.getElementById("suco").style.borderColor="white"
+                document.getElementById("coca").style.borderColor="green"
+                bebida = 'coca'
+        }
+        function escolherSuco(){
+                document.getElementById("coca").style.borderColor="white"
+                document.getElementById("suco").style.borderColor="green"
+                bebida = 'suco'
+        }
+        function escolherPudim(){
+                document.getElementById("pudim").style.borderColor="green"
+                document.getElementById("sorvete").style.borderColor="white"
+                sobremesa = 'pudim'
+        }
+        function escolherSoverte(){
+                document.getElementById("sorvete").style.borderColor="green"
+                document.getElementById("pudim").style.borderColor="white"
+                sobremesa = 'sorvete'
+        }
+        function finalizarPedido(){
+          let mesagem = "Olá, gostaria de pedir um combo: "
+          +prato+" "+bebida+" "+sobremesa+" ";
+        window.open("https://wa.me/+5599999999999?text="+ mesagem)        
+        }
+
+        
+    </script>
+</head>
+<body>
+    <div class="titulo">
+      <h1>FoodBox</h1>
+      <h2>Monte seu box e receba em 15 minutos!</h2>
+    </div>
+    <h3>Primeiro, seu prato</h3>
+    <div id="frango" class="produto" onclick="escolherFrango()">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTxE_l2-memdvtDHGfgW9dGq7wCWwXzfw2KHg&usqp=CAU" alt="">
+        <h4>Frango Yin-Yang</h4>
+        <p>um pouco de batata, um pouco de salada</p>
+        <p><strong>R$ 19,90</strong></p>
+    </div>
+    <div id="carne" class="produto" onclick="escolherCarne()">
+        <img src="http://s2.glbimg.com/owIUIv1ShU7hdcpiRVZJgudch-A=/e.glbimg.com/og/ed/f/original/2015/11/30/thinkstockphotos-481608168.jpg" />
+        <h4>Carne e salada</h4>
+        <p>Partida ao meio pra parecer mais carne</p>
+        <p class="preco">R$ 24,90</p>
+    </div>
+    <h3>Agora, sua bebida</h3>
+    <div id="coca" class="produto" onclick="escolherCoca()">
+      <img src="https://uploads.codesandbox.io/uploads/user/8992be8a-58c3-40b5-a174-7bd073abce4f/ve1_-coca.jpg" />
+      <h4>Coca-cola gelada</h4>
+      <p>Normal, zero ou stevia. Vai na sorte.</p>
+      <p class="preco">R$ 5,90</p>
+    </div>
+    <div id="suco" class="produto" onclick="escolherSuco()">
+      <img src="https://www.pentaroma.com.br/assets/images/refresco-1400x934.jpg" />
+      <h4>Refresco</h4>
+      <p>Podia ser suco, mas leva água</p>
+      <p class="preco">R$ 3,90</p>
+    </div>
+
+    <h3>Por fim, sua sobremesa</h3>
+    <div id="pudim" class="produto" onclick="escolherPudim()">
+      <img src="https://img.itdg.com.br/tdg/images/recipes/000/031/593/318825/318825_original.jpg?mode=crop&width=710&height=400" />
+      <h4>Pudim</h4>
+      <p>Apenas um lindo e brilhante pudim</p>
+      <p class="preco">R$ 7,90</p>
+    </div>
+    <div id="sorvete" class="produto" onclick="escolherSoverte()">
+      <img src="https://img.itdg.com.br/tdg/images/blog/uploads/2019/05/deixar-o-sorvete-caseiro-mais-cremoso.jpg   " />
+      <h4>Sorvete bem gelado</h4>
+      <p>Três bolinhas como na foto</p>
+      <p class="preco">R$ 6,90</p>
+    </div>
+
+    <div class="botao" onclick="finalizarPedido()">
+      
+     Finalizar pedido
+
+    </div>
+      
+</body>
+</html>
